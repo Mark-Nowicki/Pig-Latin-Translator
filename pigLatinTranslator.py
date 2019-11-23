@@ -1,3 +1,37 @@
+
+
+def pigLatin(word):
+	index = first_vowel(word)
+	index2 = last_non_letter(word)
+	print(index2)
+
+	if index == 0:
+		if index2 < 0:
+			return word + 'way'
+		else:
+			return word[:index2] + 'way' + word[index2:]
+	else:
+		if index2 < 0:
+			return word[index:] + word[:index] + 'ay'
+		else:
+			return word[index:index2] + word[:index] + 'ay' + word[index2:]
+
+
+def first_vowel(s):
+	for i in range(len(s)):
+		if s[i] in 'aeiou':
+			return i
+
+def last_non_letter(word):
+	for i in range(len(word)):
+		if word[i] not in 'abcdefghijklmnopqrstuvwxyz':
+			return i
+	return -1
+
+
+def pigLatinSentence(sentence):
+	words = sentence.split(' ')
+
 	newSentence = ''
 
 	for i in range(len(words)):
