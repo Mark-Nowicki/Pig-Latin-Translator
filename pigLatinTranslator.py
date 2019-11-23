@@ -3,6 +3,7 @@
 def pigLatin(word):
 	index = first_vowel(word)
 	index2 = last_non_letter(word)
+	print(test)
 
 	if index == 0:
 		if index2 < 0:
